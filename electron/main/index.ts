@@ -1,8 +1,8 @@
-import { app, BrowserWindow, shell, ipcMain } from 'electron'
+import { app, BrowserWindow, shell, ipcMain,Menu } from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
 import puppeteer from 'puppeteer'
-
+const isMac = process.platform === 'darwin'
 
 
 // The built directory structure
@@ -44,8 +44,7 @@ const url = process.env.VITE_DEV_SERVER_URL
 const indexHtml = join(process.env.DIST, 'index.html')
 
 async function createWindow() {
-  let browser: Browser= null;
-  browser = await puppeteer.launch({
+  const browser = await puppeteer.launch({
     // "headless": false,
     // "defaultViewport": false,
   });

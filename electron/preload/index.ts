@@ -42,8 +42,8 @@ function useLoading() {
 }
 .${className} > div {
   animation-fill-mode: both;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   // background: #fff;
   background-image: url('http://superstorefinder.net/support/wp-content/uploads/2018/01/grey_style.gif');
    background-size: 100%;
@@ -91,4 +91,4 @@ window.onmessage = (ev) => {
   ev.data.payload === 'removeLoading' && removeLoading()
 }
 
-setTimeout(removeLoading, 1000)
+setTimeout(removeLoading, 2500)
