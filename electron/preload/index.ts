@@ -42,10 +42,12 @@ function useLoading() {
 }
 .${className} > div {
   animation-fill-mode: both;
-  width: 50px;
-  height: 50px;
-  background: #fff;
-  animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;
+  width: 40px;
+  height: 40px;
+  // background: #fff;
+  background-image: url('http://superstorefinder.net/support/wp-content/uploads/2018/01/grey_style.gif');
+   background-size: 100%;
+  // animation: square-spin 3s 0s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite;
 }
 .app-loading-wrap {
   position: fixed;
@@ -89,4 +91,4 @@ window.onmessage = (ev) => {
   ev.data.payload === 'removeLoading' && removeLoading()
 }
 
-setTimeout(removeLoading, 4999)
+setTimeout(removeLoading, 1000)

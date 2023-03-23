@@ -1,6 +1,9 @@
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
+import puppeteer from 'puppeteer'
+
+
 
 // The built directory structure
 //
@@ -41,6 +44,16 @@ const url = process.env.VITE_DEV_SERVER_URL
 const indexHtml = join(process.env.DIST, 'index.html')
 
 async function createWindow() {
+  let browser: Browser= null;
+  browser = await puppeteer.launch({
+    // "headless": false,
+    // "defaultViewport": false,
+  });
+  const page = await browser.newPage()
+
+  // Use Puppeteer to navigate to a webpage, take screenshots, etc.
+  await page.goto('https://www.google.com')
+  await page.screenshot({ path: 'screenshot.png' })
   win = new BrowserWindow({
     title: 'Main window',
     icon: join(process.env.PUBLIC, 'favicon.ico'),
@@ -52,7 +65,7 @@ async function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    autoHideMenuBar: true,
+    autoHideMenuBar: false,
   })
 
   if (process.env.VITE_DEV_SERVER_URL) { // electron-vite-vue#298
@@ -62,7 +75,6 @@ async function createWindow() {
   } else {
     win.loadFile(indexHtml)
   }
-
   // Test actively push message to the Electron-Renderer
   win.webContents.on('did-finish-load', () => {
     win?.webContents.send('main-process-message', new Date().toLocaleString())
