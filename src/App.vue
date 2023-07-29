@@ -11,20 +11,6 @@
           icon="menu"
         />
 
-        <q-btn flat no-caps no-wrap class="q-ml-xs" v-if="$q.screen.gt.xs">
-          <q-icon :name="fabYoutube" color="red" size="28px" />
-          <q-toolbar-title shrink class="text-weight-bold">
-            YouTube
-          </q-toolbar-title>
-        </q-btn>
-
-        <q-space />
-
-        <div class="YL__toolbar-input-container row no-wrap">
-          <q-input dense outlined square v-model="search" placeholder="Search" class="bg-white col" />
-          <q-btn class="YL__toolbar-input-btn" color="grey-3" text-color="grey-8" icon="search" unelevated />
-        </div>
-
         <q-space />
 
         <div class="q-gutter-sm row items-center no-wrap">
@@ -73,67 +59,7 @@
 
           <q-separator class="q-my-md" />
 
-          <q-item v-for="link in links2" :key="link.text" v-ripple clickable>
-            <q-item-section avatar>
-              <q-icon color="grey" :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
 
-          <q-separator class="q-mt-md q-mb-xs" />
-
-          <q-item-label header class="text-weight-bold text-uppercase">
-            More from Youtube
-          </q-item-label>
-
-          <q-item v-for="link in links3" :key="link.text" v-ripple clickable>
-            <q-item-section avatar>
-              <q-icon color="grey" :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-separator class="q-my-md" />
-
-          <q-item v-for="link in links4" :key="link.text" v-ripple clickable>
-            <q-item-section avatar>
-              <q-icon color="grey" :name="link.icon" />
-            </q-item-section>
-            <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
-            </q-item-section>
-          </q-item>
-
-          <q-separator class="q-mt-md q-mb-lg" />
-
-          <div class="q-px-md text-grey-9">
-            <div class="row items-center q-gutter-x-sm q-gutter-y-xs">
-              <a
-                v-for="button in buttons1"
-                :key="button.text"
-                class="YL__drawer-footer-link"
-                href="javascript:void(0)"
-              >
-                {{ button.text }}
-              </a>
-            </div>
-          </div>
-          <div class="q-py-md q-px-md text-grey-9">
-            <div class="row items-center q-gutter-x-sm q-gutter-y-xs">
-              <a
-                v-for="button in buttons2"
-                :key="button.text"
-                class="YL__drawer-footer-link"
-                href="javascript:void(0)"
-              >
-                {{ button.text }}
-              </a>
-            </div>
-          </div>
         </q-list>
       </q-scroll-area>
     </q-drawer>
@@ -147,10 +73,8 @@
 <script>
 import { ref } from 'vue'
 import { fabYoutube } from '@quasar/extras/fontawesome-v6'
-
 export default {
   name: 'MyLayout',
-
   setup () {
     const leftDrawerOpen = ref(false)
     const search = ref('')
