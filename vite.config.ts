@@ -67,7 +67,12 @@ export default defineConfig(({ command }) => {
     ],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+        '@views': fileURLToPath(new URL('./src/views', import.meta.url)),
+        '@includes': fileURLToPath(new URL('./src/views/includes', import.meta.url)),
+        '@layouts': fileURLToPath(new URL('./src/views/includes/layouts', import.meta.url)),
+        '@pages': fileURLToPath(new URL('./src/views/pages', import.meta.url)),
+        '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
       }
     },
     server: process.env.VSCODE_DEBUG && (() => {

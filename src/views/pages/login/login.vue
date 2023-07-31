@@ -1,4 +1,3 @@
-<!-- components/LoginForm.vue -->
 <template>
   <q-page padding>
     <q-card class="q-mx-auto" style="max-width: 400px;">
@@ -15,7 +14,6 @@
     </q-card>
   </q-page>
 </template>
-
 <script>
 export default {
   data() {
