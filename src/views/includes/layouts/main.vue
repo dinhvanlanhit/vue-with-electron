@@ -45,8 +45,8 @@ export default {
       menuItems: [
         { icon: 'home', text: 'Dashboard','path':"/"},
         { icon: 'menu', text: 'Jobs','path':"/jobs"},
-        { icon: 'whatshot', text: 'Proxys',path:"/proxys"},
-        { icon: 'terminal', text: 'Scripts',path:"/scripts" },
+        { icon: 'whatshot', text: 'Proxys',path:"/api-proxys"},
+        { icon: 'terminal', text: 'Scripts',path:"/actions" },
       ]
     }
   },

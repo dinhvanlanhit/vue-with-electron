@@ -8,14 +8,14 @@ const routes = [
     //         {
     //             path: "/dashboard",
     //             name: 'dashboard',
-    //             component: () => import("@pages/dashboard/dashboard.vue"),
+    //             component: () => import("@views/dashboard/dashboard.vue"),
     //         }
     //     ]
     // },
     {
         path: "/",
         name: 'login',
-        component: () => import("@pages/login/login.vue"),
+        component: () => import("@views/pages/login/login.vue"),
     },
 ];
 const router= createRouter({
