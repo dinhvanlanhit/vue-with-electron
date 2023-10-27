@@ -1,7 +1,8 @@
 import { app, BrowserWindow, shell, ipcMain,Menu,screen} from 'electron'
 import { release } from 'node:os'
 import { join } from 'node:path'
-import puppeteer from 'puppeteer'
+import mongodb  from "../../../backend/database/mongodb.js";
+
 const isMac = process.platform === 'darwin'
 
 // The built directory structure
